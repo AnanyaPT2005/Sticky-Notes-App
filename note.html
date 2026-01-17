@@ -1,0 +1,55 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><p>Sticky Note</p></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="topbar" data-tauri-drag-region>
+  <button id="new">＋</button>
+  <button id="edit">Edit</button>
+  <button id="menu">☰</button>
+</div>
+
+<textarea id="content" disabled></textarea>
+
+
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sticky Note</title>
+  <link rel="stylesheet" href="note.css">
+  <!-- Include Tauri preload script -->
+  
+</head>
+<body>
+  <div class="topbar" data-tauri-drag-region>
+    <button id="new">＋</button>
+    <button id="fav" title="Favorite">🤍</button>
+    <button id="priority" title="Priority">☆</button>
+    <div class="spacer"></div> 
+    <button id="edit"> Edit </button>
+    <button id="menu">☰</button>
+    <button id="delete">🗑️</button>
+
+  </div>
+
+  <textarea id="content" placeholder="Type here..."></textarea>
+  <dialog id="delete-warning" data-tauri-drag-region="false">
+    <p id="delete-warning-text"></p>
+    <button id="delete-warning-ok">OK</button>
+  </dialog>
+
+
+  <script type="module" src="src/note.js"></script>
+
+</body>
+</html>

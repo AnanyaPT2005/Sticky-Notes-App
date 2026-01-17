@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sticky Notes Menu</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <h2 class="menu-title">Sticky Notes Menu</h2>
+
+  <!-- MAIN CONTENT -->
+  <div class="menu-content">
+
+    <div class="notes-section">
+      <h3 class="section-title">Favorites❤️</h3>
+      <div id="favorite-notes" class="notes-list favorite-notes">
+        <!-- favorite notes only -->
+      </div>
+    </div>
+
+    <!-- RECENT NOTES (ALL NOTES) -->
+    <div class="notes-section">
+      <h3 class="section-title">Recent Notes</h3>
+      <div id="recent-notes" class="notes-list recent-notes">
+        <!-- all notes sorted by last opened -->
+      </div>
+    </div>
+
+    <!-- FAVORITE NOTES -->
+    
+
+  </div>
+
+  <!-- DELETE WARNING DIALOG -->
+  <dialog id="delete-warning" data-tauri-drag-region="false">
+    <p id="delete-warning-text"></p>
+    <button id="delete-warning-ok">OK</button>
+  </dialog>
+
+  <script type="module" src="/menu.js"></script>
+</body>
+</html>

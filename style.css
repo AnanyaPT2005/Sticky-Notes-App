@@ -1,0 +1,189 @@
+/* --- GLOBAL RESET FOR MENU WINDOW --- */
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden; /* 👈 stop body scrolling */
+  font-family: system-ui, sans-serif;
+  background: #fff8b5;
+}
+
+/* --- MENU HEADER --- */
+.menu-title {
+  height: 48px;
+  line-height: 48px;
+  padding: 0 12px;
+  margin: 0;
+  font-size: 18px;
+
+  background: #f1e37a;
+  border-bottom: 1px solid #ddd;
+
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* --- NOTES LIST --- */
+.notes-list {
+  height: calc(100% - 48px); /* 👈 exact remaining space */
+  overflow-y: auto;          /* 👈 scroll ONLY if needed */
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* --- NOTE ITEM --- */
+/* .note-item {
+  padding: 10px;
+  margin-bottom: 8px;
+  background: #fff8b0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.note-item:hover {
+  background: #fff38a;
+}
+
+.note-date {
+  font-size: 11px;
+  opacity: 0.7;
+  margin-top: 4px;
+} */
+
+.note-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 10px;
+  margin-bottom: 8px;
+  background: #fff8b0;
+  border-bottom: 3px solid #ffd08a;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.note-item:hover {
+  background: #fff38a;
+}
+
+.note-delete {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  opacity: 0;
+}
+
+.note-item:hover .note-delete {
+  opacity: 1;
+}
+
+.note-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 4px;
+}
+
+/* --- DELETE WARNING DIALOG --- */
+#delete-warning {
+  border: none;
+  border-radius: 8px;
+  padding: 16px;
+  width: 280px;
+
+  background: #fff8b5;
+  color: #333;
+  font-family: system-ui, sans-serif;
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+/* Backdrop (native dialog overlay) */
+#delete-warning::backdrop {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+/* Text inside dialog */
+#delete-warning-text {
+  margin: 0 0 14px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* OK button */
+#delete-warning-ok {
+  display: block;
+  margin-left: auto;
+
+  padding: 6px 14px;
+  font-size: 13px;
+  font-family: inherit;
+
+  background: #f1e37a;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+
+  cursor: pointer;
+}
+
+/* Hover + focus */
+#delete-warning-ok:hover {
+  background: #fff38a;
+}
+
+#delete-warning-ok:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(241, 227, 122, 0.6);
+}
+
+.menu-content {
+  height: calc(100% - 48px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.recent-notes {
+  max-height: 320px;
+  overflow-y: auto;
+  margin: 5px;
+  border: #ffd08a solid 2px;
+}
+
+.favorite-notes {
+  max-height: 220px;
+  overflow-y: auto;
+  margin: 5px;
+  border: #ffd08a solid 2px;
+}
+
+/* ===== CUSTOM SCROLLBAR (MENU) ===== */
+
+/* Apply to all scrollable note containers */
+.notes-list {
+  scrollbar-width: thin;                 /* Firefox */
+  scrollbar-color: #e6d86a transparent;
+}
+
+/* WebKit browsers (Tauri / Chromium) */
+.notes-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.notes-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.notes-list::-webkit-scrollbar-thumb {
+  background: #e6d86a;
+  border-radius: 10px;
+  border: 2px solid #fff8b5;
+}
+
+.notes-list::-webkit-scrollbar-thumb:hover {
+  background: #d8c85a;
+}
